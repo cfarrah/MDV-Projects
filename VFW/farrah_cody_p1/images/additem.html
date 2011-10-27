@@ -10,8 +10,44 @@
 </head>
 <body>
 	<header>
-		<h1>Header 1</h1>	
+		<h1>Literacy log for Pre-Kindergarten</h1>
+		<p>Easily keep track of your child's learning activities!</p>	
 	</header>
-	<footer>    </footer>
+	<form action="#" method="post">
+		<fieldset>
+			<legend>Child Information</legend>
+			<ul>
+				<li><label for="name">Name: </label><input type="text" id="name"/></li>
+				<li><label for="age">Age:</label><input type="text" id="age"/></li>
+				<li> Gender: 
+					<ul>
+					<li><input type="radio" checked value="male" id="male" name="gender"/><label for="male">Male</label></li>
+					<li><input type="radio" value="female" id="female" name="gender"/><label for="female">Female</label></li>
+					</ul>
+				</li>
+			</ul>
+		</fieldset>
+	</form>
+	<form action="#" method="post">
+		<fieldset>
+			<legend>Activity Information</legend>
+			<ul>
+				<li><label for="date">Today's Date</label><input type="date" min="2010-01-01" max="3000-01-01"/></li>
+				<li><label for="actName">Name of the Activity</label><input type="text" id="actName"/></li>
+				<li>
+					<label for="activity">What kind of activity was it?</label>
+						<select id="activity">
+							<option value="book">Book</option>
+							<option value="game">Game</option>
+							<optgroup label="(Only educational programs will apply">
+							<option value="show">Show</option>
+							</optgroup>
+						</select>
+				</li>
+				<li><label for="time">How long did this activity last? (in minutes)</label><input type="range" min="5" max="120"/></li>
+				<li><label for="addl">Additional Comments</label><br /><textarea id="addl"></textarea></li>
+			</ul>
+		</fieldset>
+	</form>
 </body>
 </html>

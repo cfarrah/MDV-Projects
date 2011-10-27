@@ -4,23 +4,48 @@
 <dict>
 	<key>ESProjectShowHiddenFilesKey</key>
 	<false/>
+	<key>ESProjectWindowState</key>
+	<dict>
+		<key>ContentSize</key>
+		<string>{1106, 705}</string>
+		<key>ProjectURL</key>
+		<string>file://localhost/Users/cfarrah/github/MDV%20Projects/VFW/farrah_cody_p1/farrah_cody_p1.esproj/</string>
+		<key>StateType</key>
+		<string>ProjectWindow</string>
+		<key>TopLeftPoint</key>
+		<string>{358, 837}</string>
+	</dict>
+	<key>com.macrabbit.Espresso.FileManager.DisclosureCollapsed</key>
+	<false/>
+	<key>com.macrabbit.Espresso.FileManager.FileControllerState</key>
+	<dict>
+		<key>ExpandedURLs</key>
+		<array>
+			<string>file://localhost/Users/cfarrah/github/mdv%20Projects/VFW/farrah_cody_p1/css</string>
+			<string>file://localhost/Users/cfarrah/github/mdv%20Projects/VFW/farrah_cody_p1/images</string>
+		</array>
+	</dict>
+	<key>com.macrabbit.Espresso.Publisher.DisclosureCollapsed</key>
+	<false/>
 	<key>com.macrabbit.Espresso.Workspace.Tabs</key>
 	<dict>
 		<key>Tabs</key>
 		<array>
 			<dict>
 				<key>DocumentURL</key>
-				<string>file://localhost/Users/cfarrah/github/mdv%20Projects/VFW/farrah_cody_p1/images/Farrah_Cody_p1.html</string>
+				<string>file://localhost/Users/cfarrah/github/MDV%20Projects/VFW/farrah_cody_p1/images/index.html</string>
 				<key>StateType</key>
 				<string>DefaultTab</string>
 			</dict>
 			<dict>
 				<key>DocumentURL</key>
-				<string>file://localhost/Users/cfarrah/github/MDV%20Projects/VFW/farrah_cody_p1/images/index.html</string>
+				<string>file://localhost/Users/cfarrah/github/MDV%20Projects/VFW/farrah_cody_p1/images/additem.html</string>
 				<key>StateType</key>
 				<string>DefaultTab</string>
 			</dict>
 		</array>
 	</dict>
+	<key>com.macrabbit.Espresso.WorkspaceTabs.DisclosureCollapsed</key>
+	<false/>
 </dict>
 </plist>
