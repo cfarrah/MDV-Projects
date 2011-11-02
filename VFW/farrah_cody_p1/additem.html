@@ -40,16 +40,7 @@
 			<ul>
 				<li><label for="date">Today's Date</label><input type="date" id="date" min="2010-01-01" max="3000-01-01"/></li>
 				<li><label for="actName">Name of the Activity</label><input type="text" id="actName"/></li>
-				<li>
-					<label for="activity">What kind of activity was it?</label>
-						<select id="activity">
-							<option value="book">Book</option>
-							<option value="game">Game</option>
-								<optgroup label="(Only educational programs will apply">
-									<option value="show">Show</option>
-								</optgroup>
-						</select>
-				</li>
+				<li id="select"><label for="activities">* Add Activity:</label><br /></li>
 				<li><label for="time">How long did this activity last? (in minutes)</label><input type="range" min="5" max="120"/></li>
 				<li><label for="addl">Additional Comments</label><br /><textarea id="addl"></textarea></li>
 			</ul>
