@@ -7,19 +7,19 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 	//getElementID Function
 	function $(x){
-		var theElement = document.getElementByID(x);
+		var theElement = document.getElementById(x);
 		return theElement;
 	}
 
 	//Create select field element and populate with options.
 	function makeCats(){
 		var formTag = document.getElementsByTagName("form"), //formTag is an array
-			selectLi = $("select"),
-			makeSelect = document.createElement("select");
+			selectLi = $('select'),
+			makeSelect = document.createElement('select');
 			makeSelect.setAttribute("id", "groups");
-		for(var i=0, j=whatActivity.length; i<j; i++){
-			var makeOption = document.createElement("option");
-			var optText = whatActivity[i];
+		for(var i=0, j=actGroup.length; i<j; i++){
+			var makeOption = document.createElement('option');
+			var optText = actGroup[i];
 			makeOption.setAttribute("value", optText);
 			makeOption.innerHTML = optText;
 			makeSelect.appendChild(makeOption);
@@ -29,15 +29,17 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 	
 	//Variable Defaults
-	var whatActivity = ["--What kind of activity was it?--", "Book", "Game", "Show"];
+	var actGroup = ["--What kind of activity was it?--", "Book", "Game", "Show"];
+	
 	makeCats();
-	/*
+	
 	//Set Link & Submit Click Events
+	/*
 	var displayData = $("displayData")
 	displayData.addEventLister("click", getData);
 	var clearData = $("clearData");
 	clearData.addEventLister("click", clearLocal);
 	var saveData = $("submit");
 	saveData.addEventLister("click", storeData);
+	*/
 });
-*/
