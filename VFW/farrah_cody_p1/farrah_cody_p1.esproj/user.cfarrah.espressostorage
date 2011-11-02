@@ -13,7 +13,7 @@
 		<key>StateType</key>
 		<string>ProjectWindow</string>
 		<key>TopLeftPoint</key>
-		<string>{540, 859}</string>
+		<string>{6, 872}</string>
 	</dict>
 	<key>com.macrabbit.Espresso.FileManager.DisclosureCollapsed</key>
 	<false/>
@@ -23,6 +23,7 @@
 		<array>
 			<string>file://localhost/Users/cfarrah/github/MDV%20Projects/VFW/farrah_cody_p1/css</string>
 			<string>file://localhost/Users/cfarrah/github/MDV%20Projects/VFW/farrah_cody_p1/images</string>
+			<string>file://localhost/Users/cfarrah/github/MDV%20Projects/VFW/farrah_cody_p1/js</string>
 		</array>
 	</dict>
 	<key>com.macrabbit.Espresso.Publisher.DisclosureCollapsed</key>
