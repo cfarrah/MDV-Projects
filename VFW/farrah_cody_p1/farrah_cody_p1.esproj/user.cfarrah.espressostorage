@@ -34,13 +34,7 @@
 		<array>
 			<dict>
 				<key>DocumentURL</key>
-				<string>file://localhost/Users/cfarrah/github/MDV%20Projects/VFW/farrah_cody_p1/images/index.html</string>
-				<key>StateType</key>
-				<string>DefaultTab</string>
-			</dict>
-			<dict>
-				<key>DocumentURL</key>
-				<string>file://localhost/Users/cfarrah/github/MDV%20Projects/VFW/farrah_cody_p1/images/additem.html</string>
+				<string>file://localhost/Users/cfarrah/github/MDV%20Projects/VFW/farrah_cody_p1/additem.html</string>
 				<key>StateType</key>
 				<string>DefaultTab</string>
 			</dict>
