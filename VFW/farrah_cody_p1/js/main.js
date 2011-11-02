@@ -27,6 +27,19 @@ window.addEventListener("DOMContentLoaded", function(){
 		selectLi.appendChild(makeSelect);
 	}
 	
+	function storeData(){
+		localStorage.setItem("Name", $('name').value);
+		localStorage.setItem("Age", $('age').value);
+		localStorage.setItem("Male", $('male').value);
+		localStorage.setItem("Female", $('female').value);
+		localStorage.setItem("Date", $('date').value);
+		localStorage.setItem("ActivityName", $('actName').value);
+		localStorage.setItem("Time", $('time').value);
+		localStorage.setItem("Additional", $('addl').value);
+		localStorage.setItem("Select", $('select').value);
+		
+		alert("Activity Added");
+	}
 	
 	//Variable Defaults
 	var actGroup = ["--What kind of activity was it?--", "Book", "Game", "Show"];
@@ -34,12 +47,12 @@ window.addEventListener("DOMContentLoaded", function(){
 	makeCats();
 	
 	//Set Link & Submit Click Events
-	/*
+	
 	var displayData = $("displayData")
-	displayData.addEventLister("click", getData);
+	displayData.addEventListener("click", getData);
 	var clearData = $("clearData");
-	clearData.addEventLister("click", clearLocal);
+	clearData.addEventListener("click", clearLocal);
 	var saveData = $("submit");
-	saveData.addEventLister("click", storeData);
-	*/
+	saveData.addEventListener("click", storeData);
+	
 });
