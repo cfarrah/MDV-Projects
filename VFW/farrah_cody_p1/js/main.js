@@ -37,14 +37,35 @@ window.addEventListener("DOMContentLoaded", function(){
 			
 		}
 	}
-	
+	function toggleControls(n) {
+		switch (n) {
+			case "on":
+				$('activityForm').style.display = "none";
+				$('clearData').style.display = "inline";
+				$('displayData').style.display = "none";
+				$('addNew').style.display = "inline";
+				break;
+			case "off":
+				$('activityForm').style.display = "block";
+				$('clearData').style.display = "inline";
+				$('displayData').style.display = "none";
+				$('addNew').style.display = "none";
+				$('items').style.display = "none";
+				break;
+			default:
+				return false;
+		}
+	}
 	
 	
 	function storeData(){
-		var id 			= Math.floor(Math.random()*10000000001);
+		var id = Math.floor(Math.random()*10000000001);
+		
+		
 		//Gather up form field values and store in an object.
 		//Object properties contain array with the form label and input value.
 		getSelectedRadio();
+		//CURRENTLY ONLY SHOWING LAST ITEM IN GROUP!!
 		var item				= {};
 			item.name  			= ["Name:", $("name").value];
 			item.age  			= ["Age:", $('age').value];
@@ -63,12 +84,17 @@ window.addEventListener("DOMContentLoaded", function(){
 	}
 	
 	function getData(){
+		toggleControls("on");
+		if(localStorage.length === 0){
+			alert("There are no activities currently saved.")
+		}
 		//Write data from local storage to the browser
 		var makeDiv = document.createElement('div');
 		makeDiv.setAttribute("id", "items");
 		var makeList = document.createElement('ul');
 		makeDiv.appendChild(makeList);
 		document.body.appendChild(makeDiv)
+		$('items').style.display = "block";
 		for(var i=0, len=localStorage.length; i<len; i++){
 			var makeLi = document.createElement('li');
 			makeList.appendChild(makeLi);
@@ -82,7 +108,8 @@ window.addEventListener("DOMContentLoaded", function(){
 				var makeSubLi = document.createElement("li");
 				makeSubList.appendChild(makeSubLi);
 				var optSubText = obj[n][0]+" " +obj[n][1];
-				makeSubList.innerHTML = optSubText
+				makeSubLi.innerHTML = optSubText
+				
 			}
 		}
 	}

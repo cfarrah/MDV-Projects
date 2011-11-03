@@ -19,7 +19,12 @@
 		<h1>Literacy log for Pre-Kindergarten</h1>
 		<p>The easy way to keep track of your child's learning activities!</p>	
 	</header>
-	<form action="#" method="post">
+	<nav>
+		<a href="#" id="clearData" >Clear Stored Data</a>
+		<a href="#" id="displayData" >Display Data</a>
+		<a href="additem.html" id="addNew" style="display:none">Add New Activity</a>
+	</nav>
+	<form action="#" method="post" id="activityForm">
 		<fieldset>
 			<legend>Child Information</legend>
 			<ul>
@@ -46,10 +51,7 @@
 	<input type="submit" value="Save this Activity" id="submit"/>
 	</form>
 	
-	<footer>
-		<li><a id="clearData" href="#">Clear Stored Data</a></li>
-		<li><a id="displayData" href="#">Display Data</a></li>
-	</footer>
+	
 <script src="js/main.js" type="text/javascript"></script>
 </body>
 </html>
