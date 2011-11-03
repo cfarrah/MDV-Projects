@@ -1,0 +1,93 @@
+/*	Robert Cody Farrah
+	VFW Project 2
+	Term 1111
+*/
+
+html {
+	height: 100%;
+	background: url(../images/bg.jpg) no-repeat center center fixed;
+	        -webkit-background-size: cover;
+	        -moz-background-size: cover;
+	        -o-background-size: cover;
+	        background-size: cover;
+	 letter-spacing: .01px;
+	
+}
+
+body {
+	font-family: "Palatino Linotype", "Times New Roman", "Courier New", sans-serif;
+	font-size: 14px;
+	margin-left: 30px;
+	
+}
+
+p {
+	text-align: center;
+	font-family: "Palatino Linotype", "Times New Roman", "Courier New", sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 24px;
+	text-align: center;
+	font-family: "Palatino Linotype", "Times New Roman", sans-serif;
+	font-weight: bold;
+	
+}
+
+a {
+	margin-left: 80px;
+	font-family: "Palatino Linotype", "Times New Roman", sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+	}
+
+legend {
+	text-align: center;
+	;
+	font-family: "Palatino Linotype", "Times New Roman", sans-serif;
+	font-weight: bold;
+	padding: 3px;
+	border: 1px solid #333;
+	background-color: white;
+	border-radius: 7px; 
+	
+	-moz-border-radius: 7px; 
+	
+	-webkit-border-radius: 7px;
+}
+
+ul {
+	font-family: "Palatino Linotype", "Times New Roman", sans-serif;
+	font-weight: bold;
+	
+}
+
+input {
+	font-family: "Palatino Linotype", "Times New Roman", sans-serif;
+}
+
+fieldset {
+	background-image: linear-gradient(bottom, rgb(235,230,235) 8%, rgb(245,245,240) 54%);
+	background-image: -o-linear-gradient(bottom, rgb(235,230,235) 8%, rgb(245,245,240) 54%);
+	background-image: -moz-linear-gradient(bottom, rgb(235,230,235) 8%, rgb(245,245,240) 54%);
+	background-image: -webkit-linear-gradient(bottom, rgb(235,230,235) 8%, rgb(245,245,240) 54%);
+	background-image: -ms-linear-gradient(bottom, rgb(235,230,235) 8%, rgb(245,245,240) 54%);
+	
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.08, rgb(235,230,235)),
+		color-stop(0.54, rgb(245,245,240))
+	);
+	border-radius: 14px; 
+	
+	-moz-border-radius: 14px; 
+	
+	-webkit-border-radius: 14px; 
+	
+	border: 2px solid #89AFB0;
+	
+}

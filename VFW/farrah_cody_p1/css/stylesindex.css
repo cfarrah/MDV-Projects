@@ -1,0 +1,53 @@
+/*	Robert Cody Farrah
+	VFW Project 2
+	Term 1111
+*/
+
+html {
+	<link href='http://fonts.googleapis.com/css?family=Redressed' rel='stylesheet' type='text/css'>
+	height: 100%;
+	background: url(../images/bg.jpg) no-repeat center center fixed;
+	        -webkit-background-size: cover;
+	        -moz-background-size: cover;
+	        -o-background-size: cover;
+	        background-size: cover;
+	 letter-spacing: .01px;	
+}
+body {
+	font-family: Redressed, "Palatino Linotype", "Times New Roman", "Courier New", sans-serif;
+	font-size: 14px;
+	margin-left: 30px;
+}
+
+p {
+	font-family: "Palatino Linotype", "Times New Roman", "Courier New", sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+h1 {
+	font-family: Redressed, "Palatino Linotype", "Times New Roman", sans-serif;
+	font-weight: bold;
+	font-size: 35px;
+}
+
+a {
+	font-family: "Palatino Linotype", "Times New Roman", sans-serif;
+	font-weight: bold;	
+}
+
+legend {
+	font-family: "Palatino Linotype", "Times New Roman", sans-serif;
+	font-weight: bold;
+}
+
+ul {
+	font-family: "Palatino Linotype", "Times New Roman", sans-serif;
+	font-weight: bold;
+}
+
+input {
+	font-family: "Palatino Linotype", "Times New Roman", sans-serif;
+}
+
+#n
