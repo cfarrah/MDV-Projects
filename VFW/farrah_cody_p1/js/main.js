@@ -46,13 +46,13 @@ window.addEventListener("DOMContentLoaded", function(){
 		//Object properties contain array with the form label and input value.
 		getSelectedRadio();
 		var item				= {};
-			item.name  			= ["Name:", $('name').value];
+			item.name  			= ["Name:", $("name").value];
 			item.age  			= ["Age:", $('age').value];
+			item.gender			= ["Gender:", genderValue];
 			item.date  			= ["Date:", $('date').value];
 			item.actName  		= ["Activity Name:", $('actName').value];
 			item.time  			= ["Time Spent:", $('time').value];
 			item.addl  			= ["Additional Comments:", $('addl').value];
-			item.gender			= ["Gender:", genderValue];
 		
 		
 		//Save data into Local Storage: Use Stringify to convert our object to a string.
@@ -61,6 +61,32 @@ window.addEventListener("DOMContentLoaded", function(){
 		
 	
 	}
+	
+	function getData(){
+		//Write data from local storage to the browser
+		var makeDiv = document.createElement('div');
+		makeDiv.setAttribute("id", "items");
+		var makeList = document.createElement('ul');
+		makeDiv.appendChild(makeList);
+		document.body.appendChild(makeDiv)
+		for(var i=0, len=localStorage.length; i<len; i++){
+			var makeLi = document.createElement('li');
+			makeList.appendChild(makeLi);
+			var key = localStorage.key(i);
+			var value = localStorage.getItem(key);
+			//Convert a string from local storage value back to an object by using JSON.parse
+			var obj = JSON.parse(value);
+			var makeSubList = document.createElement("ul");
+			makeLi.appendChild(makeSubList);
+			for(var n in obj){
+				var makeSubLi = document.createElement("li");
+				makeSubList.appendChild(makeSubLi);
+				var optSubText = obj[n][0]+" " +obj[n][1];
+				makeSubList.innerHTML = optSubText
+			}
+		}
+	}
+	
 	
 	//Clear all data
 	function clearLocal(){
@@ -83,12 +109,12 @@ window.addEventListener("DOMContentLoaded", function(){
 	makeCats();
 	
 	//Set Link & Submit Click Events
-	/*
+	
 	var displayData = $("displayData")
 	displayData.addEventListener("click", getData);
 	var clearData = $("clearData");
 	clearData.addEventListener("click", clearLocal);
-	*/
+	
 	var saveData = $("submit");
 	saveData.addEventListener("click", storeData);
 	
