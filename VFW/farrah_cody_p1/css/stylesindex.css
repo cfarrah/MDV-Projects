@@ -19,16 +19,28 @@ body {
 	margin-left: 30px;
 }
 
-p {
-	font-family: "Palatino Linotype", "Times New Roman", "Courier New", sans-serif;
-	font-size: 14px;
-	font-weight: bold;
-}
-
 h1 {
 	font-family: Redressed, "Palatino Linotype", "Times New Roman", sans-serif;
 	font-weight: bold;
 	font-size: 35px;
+	color: #FFF;
+	text-shadow: 2px 2px 2px #000;
+}
+
+h2 {
+	font-family: Redressed, "Palatino Linotype", "Times New Roman", sans-serif;
+	font-weight: bold;
+	font-size: 18px;
+	color: #FFF;
+	text-shadow: 2px 2px 2px #000;
+}
+
+p {
+	font-family: "Palatino Linotype", "Times New Roman", "Courier New", sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #FFF;
+	text-shadow: 2px 2px 2px #000;
 }
 
 a {
@@ -44,10 +56,9 @@ legend {
 ul {
 	font-family: "Palatino Linotype", "Times New Roman", sans-serif;
 	font-weight: bold;
+	text-shadow: 4px 4px 4px #000;
 }
 
 input {
 	font-family: "Palatino Linotype", "Times New Roman", sans-serif;
 }
-
-#n

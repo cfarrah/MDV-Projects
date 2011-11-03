@@ -114,7 +114,6 @@ window.addEventListener("DOMContentLoaded", function(){
 		}
 	}
 	
-	
 	//Clear all data
 	function clearLocal(){
 		if(localStorage.length === 0){
@@ -127,21 +126,16 @@ window.addEventListener("DOMContentLoaded", function(){
 			}
 	}
 	
-	
 	//Variable Defaults
-	var actGroup = ["--What kind of activity was it?--", "Book", "Game", "Show"],
-					genderValue
-	;
+	var actGroup = ["--What kind of activity was it?--", "Book", "Game", "Show"], genderValue;
 	
 	makeCats();
 	
 	//Set Link & Submit Click Events
-	
 	var displayData = $("displayData")
 	displayData.addEventListener("click", getData);
 	var clearData = $("clearData");
 	clearData.addEventListener("click", clearLocal);
-	
 	var saveData = $("submit");
 	saveData.addEventListener("click", storeData);
 	
