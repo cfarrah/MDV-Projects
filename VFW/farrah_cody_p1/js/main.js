@@ -11,6 +11,10 @@ window.addEventListener("DOMContentLoaded", function(){
 		return theElement;
 	}
 
+	//Variable Defaults
+	var actGroup = ["--What kind of activity was it?--", "Book", "Game", "Show"], genderValue;
+
+
 	//Create select field element and populate with options.
 	function makeCats(){
 		var formTag = document.getElementsByTagName("form"), //formTag is an array
@@ -65,13 +69,14 @@ window.addEventListener("DOMContentLoaded", function(){
 		//Gather up form field values and store in an object.
 		//Object properties contain array with the form label and input value.
 		getSelectedRadio();
-		//CURRENTLY ONLY SHOWING LAST ITEM IN GROUP!!
+		
 		var item				= {};
 			item.name  			= ["Name:", $("name").value];
 			item.age  			= ["Age:", $('age').value];
 			item.gender			= ["Gender:", genderValue];
 			item.date  			= ["Date:", $('date').value];
 			item.actName  		= ["Activity Name:", $('actName').value];
+			item.activity		= ["Activity Type:", $('groups').value];
 			item.time  			= ["Time Spent:", $('time').value];
 			item.addl  			= ["Additional Comments:", $('addl').value];
 		
@@ -93,10 +98,11 @@ window.addEventListener("DOMContentLoaded", function(){
 		makeDiv.setAttribute("id", "items");
 		var makeList = document.createElement('ul');
 		makeDiv.appendChild(makeList);
-		document.body.appendChild(makeDiv)
+		document.body.appendChild(makeDiv);
 		$('items').style.display = "block";
 		for(var i=0, len=localStorage.length; i<len; i++){
 			var makeLi = document.createElement('li');
+			var linksLi = document.createElement('li');
 			makeList.appendChild(makeLi);
 			var key = localStorage.key(i);
 			var value = localStorage.getItem(key);
@@ -108,10 +114,37 @@ window.addEventListener("DOMContentLoaded", function(){
 				var makeSubLi = document.createElement("li");
 				makeSubList.appendChild(makeSubLi);
 				var optSubText = obj[n][0]+" " +obj[n][1];
-				makeSubLi.innerHTML = optSubText
-				
+				makeSubLi.innerHTML = optSubText;
+				makeSubList.appendChild(linksLi);	
 			}
+			makeItemLinks(localStorage.key(i), linksLi);
 		}
+	}
+	
+	//Make Item Links
+	//Create the edit and delete links for each stored item when displayed.
+	function makeItemLinks(key, linksLi){
+		//add edit single item link
+		var editLink = document.createElement('a');
+		editLink.href = "#";
+		editLink.key = key;
+		var editText = "Edit Activity";
+		//editLink.addEventListener("click", editItem);
+		editLink.innerHTML = editText;
+		linksLi.appendChild(editLink);
+		
+		//add line break
+		var breakTag = document.createElement('br');
+		linksLi.appendChild(breakTag);
+		
+		//add edit single item link
+		var deleteLink = document.createElement('a');
+		deleteLink.href = "#";
+		deleteLink.key = key;
+		var deleteText = "Delete Activity";
+		//deleteLink.addEventListener("click", deleteItem);
+		deleteLink.innerHTML = deleteText;
+		linksLi.appendChild(deleteLink);
 	}
 	
 	//Clear all data
@@ -126,8 +159,6 @@ window.addEventListener("DOMContentLoaded", function(){
 			}
 	}
 	
-	//Variable Defaults
-	var actGroup = ["--What kind of activity was it?--", "Book", "Game", "Show"], genderValue;
 	
 	makeCats();
 	
