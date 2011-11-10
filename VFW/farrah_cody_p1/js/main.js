@@ -62,9 +62,16 @@ window.addEventListener("DOMContentLoaded", function(){
 	}
 	
 	
-	function storeData(){
-		var id = Math.floor(Math.random()*10000000001);
-		
+	function storeData(key){
+		//If there is no key, this is a brand new item and need a new key
+		if(!key){
+			var id = Math.floor(Math.random()*10000000001);
+		}else{
+			//Set the id to the existing key we're editing so that it will save over daya.
+			//The key is the same key that's been passed along from the editSubmit event handler
+			//to the validate function, and then passed here, into the storeData function.
+			id = key;
+		}
 		
 		//Gather up form field values and store in an object.
 		//Object properties contain array with the form label and input value.
@@ -271,8 +278,9 @@ window.addEventListener("DOMContentLoaded", function(){
 			e.preventDefault();
 			return false;
 		}else{
-			//if no errors save data.
-			storeData();
+			//if no errors save data.  Send key value (which came from the editData function).
+			//Remember this key value was passed through the editSubmit even listener as a property.
+			storeData(this.key);
 		}
 		
 	}
