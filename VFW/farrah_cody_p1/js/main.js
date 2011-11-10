@@ -76,7 +76,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			item.gender			= ["Gender:", genderValue];
 			item.date  			= ["Date:", $('date').value];
 			item.actName  		= ["Activity Name:", $('actName').value];
-			item.activity		= ["Activity Type:", $('groups').value];
+			item.group			= ["Activity Type:", $('groups').value];
 			item.time  			= ["Time Spent:", $('time').value];
 			item.addl  			= ["Additional Comments:", $('addl').value];
 		
@@ -85,6 +85,19 @@ window.addEventListener("DOMContentLoaded", function(){
 		localStorage.setItem(id, JSON.stringify(item));
 		alert("This activity has been added.");
 		
+	
+	}
+	
+	function getRangeValue() {
+		var r = document.forms[0],
+			range = r['time'],
+			amt = r['amt'],
+			cachedRangeValue = localStorage.rangeValue ? localStorage.rangeValue : 5;
+			range.value = cachedRangeValue;
+			amt.value = cachedRangeValue;
+			range.addEventListener("change", function() {
+			amt.value = range.value;
+			}, false);
 	
 	}
 	
@@ -129,7 +142,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		editLink.href = "#";
 		editLink.key = key;
 		var editText = "Edit Activity";
-		//editLink.addEventListener("click", editItem);
+		editLink.addEventListener("click", editItem);
 		editLink.innerHTML = editText;
 		linksLi.appendChild(editLink);
 		
@@ -146,6 +159,41 @@ window.addEventListener("DOMContentLoaded", function(){
 		deleteLink.innerHTML = deleteText;
 		linksLi.appendChild(deleteLink);
 	}
+	function editItem(){
+		//Grab the data from our item from Local Storage.
+		var value = localStorage.getItem(this.key);
+		var item = JSON.parse(value);
+		
+		//Show the form
+		toggleControls("off");
+		
+		//Populate the form fields with current localStorage values.
+		$('name').value = item.name[1];
+		$('age').value = item.age[1];
+		var radios = document.forms[0].gender
+		for (var i=0; i<radios; i++){
+			if(radios[i].value == "Male" && item.gender[1] == "Male"){
+				radios[i].setAttribute("checked", "checked");
+			}else if(radios[i].value == "Female" && item.gender[1] == "Female"){
+				radios[i].setAttribute("checked", "checked");
+			}
+		}
+		$('date').value = item.date[1];
+		$('actName').value = item.actName[1];
+		$('groups').value = item.group[1];
+		$('time').value = item.time[1];
+		$('addl').value = item.addl[1];
+		
+		//Remove the listener from the input 'save' button.
+		saveData.removeEventListener("click", storeData);
+		//Change Submit value to say edit.
+		$('submit').value = "Edit Activity";
+		var editSubmit = $('submit');
+		//Save the key value established in this function as a property of the editSubmit
+		//so we can use that value when we save the data we edited.
+		editSubmit.addEventListener("click", validate);
+		editSubmit.key = this.key;
+	}
 	
 	//Clear all data
 	function clearLocal(){
@@ -159,7 +207,11 @@ window.addEventListener("DOMContentLoaded", function(){
 			}
 	}
 	
+	function validate(){
+		
+	}
 	
+	getRangeValue();
 	makeCats();
 	
 	//Set Link & Submit Click Events
