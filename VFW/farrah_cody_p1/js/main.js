@@ -162,7 +162,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		deleteLink.href = "#";
 		deleteLink.key = key;
 		var deleteText = "Delete Activity";
-		//deleteLink.addEventListener("click", deleteItem);
+		deleteLink.addEventListener("click", deleteItem);
 		deleteLink.innerHTML = deleteText;
 		linksLi.appendChild(deleteLink);
 	}
@@ -202,6 +202,17 @@ window.addEventListener("DOMContentLoaded", function(){
 		editSubmit.key = this.key;
 	}
 	
+	
+	function deleteItem(){
+		var ask = confirm("Delete this Activity?");
+		if(ask){
+			localStorage.removeItem(this.key);
+			alert("Activity was Deleted.");
+			window.location.reload();
+		}else{
+			alert("Activity was NOT deleted.")
+		}
+	}
 	//Clear all data
 	function clearLocal(){
 		if(localStorage.length === 0){
