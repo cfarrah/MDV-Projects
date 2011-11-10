@@ -113,6 +113,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		if(localStorage.length === 0){
 			alert("There are no activities currently saved.")
 		}
+		getRangeValue();
 		//Write data from local storage to the browser
 		var makeDiv = document.createElement('div');
 		makeDiv.setAttribute("id", "items");
