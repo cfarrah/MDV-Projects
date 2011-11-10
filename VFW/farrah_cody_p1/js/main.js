@@ -13,7 +13,7 @@ window.addEventListener("DOMContentLoaded", function(){
 
 	//Variable Defaults
 	var actGroup = ["--What kind of activity was it?--", "Book", "Game", "Show"], genderValue;
-
+	var errMsg = $('errors');
 
 	//Create select field element and populate with options.
 	function makeCats(){
@@ -207,7 +207,73 @@ window.addEventListener("DOMContentLoaded", function(){
 			}
 	}
 	
-	function validate(){
+	function validate(e){
+		//Define the elements we want to check
+		var getName = $('name');
+		var getAge = $('age');
+		var getDate = $('date');
+		var getActName = $('actName');
+		var getGroup = $('groups');
+		
+		//Reset Error Messages
+		errMsg.innerHTML = "";
+		getName.style.border = "1px solid black";
+		getAge.style.border = "1px solid black";
+		getDate.style.border = "1px solid black";
+		getActName.style.border = "1px solid black";
+		getGroup.style.border = "1px solid black";
+		
+		//Get Error Messages
+		var messageAry = [];
+		
+		//Name Validation
+		if(getName.value === ""){
+			var nameError = "Please enter a name.";
+			getName.style.border = "1px solid red";
+			messageAry.push(nameError);
+		}
+		
+		//Age Validation
+		if (getAge.value === ""){
+			var ageError = "Please enter an Age.";
+			getAge.style.border = "1px solid red";
+			messageAry.push(ageError);
+		}
+		
+		//Date Validation
+		if (getDate.value === ""){
+			var dateError = "Please enter an Age.";
+			getDate.style.border = "1px solid red";
+			messageAry.push(dateError);
+		}
+		
+		//Activity type validation
+		if (getActName.value === ""){
+			var actNameError = "Please enter an Age.";
+			getActName.style.border = "1px solid red";
+			messageAry.push(actNameError);
+		}
+		
+		//Group Validation
+		if(getGroup.value === "--What kind of activity was it?--"){
+			var groupError = "Please choose what kind of Activity this was.";
+			getGroup.style.border = "1px solid red";
+			messageAry.push(groupError);
+		}
+		
+		//If there were errors, display them on the screen.
+		if(messageAry.length >= 1){
+			for(var i=0, j=messageAry.length; i<j; i++){
+				var txt = document.createElement('li');
+				txt.innerHTML = messageAry[i];
+				errMsg.appendChild(txt);
+			}
+			e.preventDefault();
+			return false;
+		}else{
+			//if no errors save data.
+			storeData();
+		}
 		
 	}
 	
@@ -220,6 +286,6 @@ window.addEventListener("DOMContentLoaded", function(){
 	var clearData = $("clearData");
 	clearData.addEventListener("click", clearLocal);
 	var saveData = $("submit");
-	saveData.addEventListener("click", storeData);
+	saveData.addEventListener("click", validate);
 	
 });
