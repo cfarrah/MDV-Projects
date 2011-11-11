@@ -103,7 +103,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			range.value = cachedRangeValue;
 			amt.value = cachedRangeValue;
 			range.addEventListener("change", function() {
-			amt.value = range.value;
+				amt.value = range.value;
 			}, false);
 	
 	}
@@ -223,7 +223,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			alert("All activities have been deleted.")
 			window.location.reload();
 			return false;
-			}
+		}
 	}
 	
 	function validate(e){
