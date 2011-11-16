@@ -148,8 +148,8 @@ window.addEventListener("DOMContentLoaded", function(){
 		var imageLi = document.createElement('li');
 		makeSubList.appendChild(imageLi);
 		var newImg = document.createElement('img');
-		var setSrc = newImg.setAttribute("src", "../images/" + catName + ".png");
-		image.Li.appendChild(newImg);
+		var setSrc = newImg.setAttribute("src", "images/" + catName + ".png");
+		imageLi.appendChild(newImg);
 	}
 	
 	//JSON Object for auto populate 
