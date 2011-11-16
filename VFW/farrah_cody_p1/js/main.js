@@ -132,7 +132,6 @@ window.addEventListener("DOMContentLoaded", function(){
 			var obj = JSON.parse(value);
 			var makeSubList = document.createElement("ul");
 			makeLi.appendChild(makeSubList);
-			getImage(obj.group[1], makeSubList);
 			for(var n in obj){
 				var makeSubLi = document.createElement("li");
 				makeSubList.appendChild(makeSubLi);
@@ -143,15 +142,6 @@ window.addEventListener("DOMContentLoaded", function(){
 			makeItemLinks(localStorage.key(i), linksLi);
 		}
 	}
-	//Get the image for chosen group
-	function getImage(catName, makeSubList){
-		var imageLi = document.createElement('li');
-		makeSubList.appendChild(imageLi);
-		var newImg = document.createElement('img');
-		var setSrc = newImg.setAttribute("src", "../images/" + catName + ".png");
-		image.Li.appendChild(newImg);
-	}
-	
 	//JSON Object for auto populate 
 	function autoFillData(){
 		json = {
@@ -184,7 +174,7 @@ window.addEventListener("DOMContentLoaded", function(){
 				"group": ["Group: ", "Book"],
 				"time": ["Time: ", "25"],
 				"addl": ["Additional Comments: ", "None"]
-			}
+			},
 			
 		};
 		
