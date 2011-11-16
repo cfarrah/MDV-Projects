@@ -1,5 +1,5 @@
 //Cody Farrah
-//VFW Project 2
+//VFW Project 4
 //Term 1111
 
 //Wait until the DOM is ready.
@@ -111,7 +111,8 @@ window.addEventListener("DOMContentLoaded", function(){
 	function getData(){
 		toggleControls("on");
 		if(localStorage.length === 0){
-			alert("There are no activities currently saved.")
+			autoFillData();
+			alert("There are no activities currently saved, default data has been added.")
 		}
 		getRangeValue();
 		//Write data from local storage to the browser
@@ -141,6 +142,48 @@ window.addEventListener("DOMContentLoaded", function(){
 			makeItemLinks(localStorage.key(i), linksLi);
 		}
 	}
+	//JSON Object for auto populate 
+	function autoFillData(){
+		json = {
+			"contact1": {
+				"name": ["Name: ", "Cody Farrah"],
+				"age": ["Age: ", "25"],
+				"gender": ["Gender: ", "Male"],
+				"date": ["Date: ", "12/12/2012"],
+				"actName": ["Activty Name: ", "Olivia"],
+				"group": ["Group: ", "Book"],
+				"time": ["Time: ", "10"],
+				"addl": ["Additional Comments: ", "She really relates!"]
+			},
+			"contact2": {
+				"name": ["Name: ", "Clarity Farrah"],
+				"age": ["Age: ", "4"],
+				"gender": ["Gender: ", "Female"],
+				"date": ["Date: ", "11/11/2012"],
+				"actName": ["Activty Name: ", "The Giving Tree"],
+				"group": ["Group: ", "Book"],
+				"time": ["Time: ", "15"],
+				"addl": ["Additional Comments: ", "Great read!"]
+			},
+			"contact3": {
+				"name": ["Name: ", "Rob Farrah"],
+				"age": ["Age: ", "85"],
+				"gender": ["Gender: ", "Male"],
+				"date": ["Date: ", "10/10/2012"],
+				"actName": ["Activty Name: ", "Olivia"],
+				"group": ["Group: ", "Book"],
+				"time": ["Time: ", "25"],
+				"addl": ["Additional Comments: ", "None"]
+			},
+			
+		};
+		
+		//Store the JSON OBJECT into Local Storage
+		for(var n in json){	
+			var id = Math.floor(Math.random()*10000000001);
+			localStorage.setItem(id, JSON.stringify(json[n]));
+		}
+	};
 	
 	//Make Item Links
 	//Create the edit and delete links for each stored item when displayed.
