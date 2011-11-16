@@ -107,8 +107,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			}, false);
 	
 	}
-	
-	function getData(){
+		function getData(){
 		toggleControls("on");
 		if(localStorage.length === 0){
 			autoFillData();
